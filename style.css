@@ -336,3 +336,116 @@ a:hover {
 .image-slider-next:hover {
   background: #f2f2f2;
 }
+
+/* --------------------------- */
+/* Image slider (project hero) */
+/* --------------------------- */
+
+.image-slider {
+  position: relative;
+  max-width: 960px;
+  margin: 40px auto 24px;
+  overflow: hidden;
+}
+
+.image-slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.image-slide {
+  flex: 0 0 100%;
+}
+
+.image-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 슬라이더 UI – c-o-m.kr 느낌 참고한 버전 */
+.image-slider-ui {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.image-slider-counter {
+  letter-spacing: 0.04em;
+}
+
+.image-slider-arrow {
+  border: none;
+  background: transparent;
+  padding: 2px 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.image-slider-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+/* --------------------------- */
+/* Image slider (project hero) */
+/* --------------------------- */
+
+.image-slider {
+  position: relative;
+  max-width: 960px;
+  margin: 40px auto 24px;
+  overflow: hidden;
+}
+
+.image-slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.image-slide {
+  flex: 0 0 100%;
+}
+
+.image-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 슬라이더 UI – c-o-m.kr 느낌 참고한 버전 */
+.image-slider-ui {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.image-slider-counter {
+  letter-spacing: 0.04em;
+}
+
+.image-slider-arrow {
+  border: none;
+  background: transparent;
+  padding: 2px 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.image-slider-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
