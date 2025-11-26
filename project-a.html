@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png" type="image/png">
 </head>
 <body>
   <div class="layout">
@@ -55,26 +56,32 @@
       </section>
 
 <section class="project-section">
-  <!-- 이미지 슬라이더 전체 박스 -->
+  <!-- 슬라이더 전체 박스 -->
   <div class="image-slider" data-slider>
+    <!-- 실제 이미지들이 들어가는 트랙 -->
     <div class="image-slider-track">
-      <img src="project-a/hieta-daegu-01.jpg" alt="Hieta Daegu layout 01">
-      <img src="project-a/hieta-daegu-02.jpg" alt="Hieta Daegu layout 02">
+      <img src="project-a/hieta-daegu-01.jpg"
+           alt="Project A 도면 01">
+      <img src="project-a/hieta-daegu-02.jpg"
+           alt="Project A 도면 02">
     </div>
 
-    <!-- 버튼 + 카운트 -->
+    <!-- 버튼 & 카운터 영역 -->
     <div class="image-slider-ui">
       <span class="image-slider-counter">
         <span class="current">1</span>
-        <span class="divider"> / </span>
+        <span class="slash">/</span>
         <span class="total">2</span>
       </span>
-      <button class="image-slider-prev" type="button">&lt;</button>
-      <button class="image-slider-next" type="button">&gt;</button>
+
+      <button class="image-slider-prev" type="button" aria-label="Previous image">
+        &lt;
+      </button>
+      <button class="image-slider-next" type="button" aria-label="Next image">
+        &gt;
+      </button>
     </div>
   </div>
-
-  <!-- 아래는 기존 텍스트/사진 섹션이 있으면 그대로 이어가면 됨 -->
 </section>
 
               <section class="project-section">
@@ -105,8 +112,7 @@
     </main>
   </div>
 
- <script src="slider.js"></script>
-
+ <script src="sidebar.js"></script>
 </body>
 </html>
 
