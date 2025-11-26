@@ -54,20 +54,29 @@
         </p>
       </section>
 
-      <section class="project-section">
-<div class="image-slider" data-slider>
-  <div class="image-slider-track">
-    <img src="project-a/히에타 대구 (1).jpg" alt="Project A 이미지 01" />
-    <img src="project-a/히에타 대구 (2).jpg" alt="Project A 이미지 02" />
+<section class="project-section">
+  <!-- 이미지 슬라이더 전체 박스 -->
+  <div class="image-slider" data-slider>
+    <div class="image-slider-track">
+      <img src="project-a/hieta-daegu-01.jpg" alt="Hieta Daegu layout 01">
+      <img src="project-a/hieta-daegu-02.jpg" alt="Hieta Daegu layout 02">
+    </div>
+
+    <!-- 버튼 + 카운트 -->
+    <div class="image-slider-ui">
+      <span class="image-slider-counter">
+        <span class="current">1</span>
+        <span class="divider"> / </span>
+        <span class="total">2</span>
+      </span>
+      <button class="image-slider-prev" type="button">&lt;</button>
+      <button class="image-slider-next" type="button">&gt;</button>
+    </div>
   </div>
 
-  <button class="image-slider-prev" type="button">&lt;</button>
-  <button class="image-slider-next" type="button">&gt;</button>
+  <!-- 아래는 기존 텍스트/사진 섹션이 있으면 그대로 이어가면 됨 -->
+</section>
 
-  <div class="image-slider-counter">
-    <span class="current">1</span> / <span class="total">2</span>
-  </div>
-</div>
               <section class="project-section">
         <div class="section-caption">01 — Entrance view</div>
         <div class="section-image">
@@ -96,7 +105,8 @@
     </main>
   </div>
 
-  <script src="sidebar.js"></script>
+ <script src="slider.js"></script>
+
 </body>
 </html>
 

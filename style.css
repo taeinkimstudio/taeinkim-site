@@ -282,14 +282,13 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
-/* =========================
-   Image slider (project images)
-   ========================= */
+/* ===== 이미지 슬라이더 ===== */
 
 .image-slider {
   position: relative;
-  margin: 24px 0 40px;
-  overflow: hidden;           /* 한 박스 안에만 보이도록 */
+  max-width: 100%;
+  margin: 40px 0;
+  overflow: hidden;
 }
 
 .image-slider-track {
@@ -299,40 +298,36 @@ a:hover {
 
 .image-slider-track img {
   width: 100%;
-  flex: 0 0 100%;             /* 한 번에 한 장씩만 보이게 */
+  height: auto;
+  flex: 0 0 100%;
   display: block;
 }
 
-/* 아래쪽 1 of 2 < > UI */
-
 .image-slider-ui {
-  margin-top: 8px;
-  font-size: 11px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 4px 8px;
+  border: 1px solid #000;
+  font-size: 12px;
 }
 
 .image-slider-counter {
-  letter-spacing: 0.08em;
-}
-
-.image-slider-counter .of {
-  margin: 0 3px;
+  font-family: inherit;
 }
 
 .image-slider-prev,
 .image-slider-next {
-  border: 1px solid #000;
-  background: #fff;
-  font-size: 10px;
-  line-height: 1;
-  padding: 4px 7px;
+  border: none;
+  background: transparent;
   cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  padding: 2px 6px;
 }
 
 .image-slider-prev:hover,
 .image-slider-next:hover {
-  background: #000;
-  color: #fff;
+  text-decoration: underline;
 }
