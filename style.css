@@ -282,50 +282,57 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
-/* ─── Image slider 기본 레이아웃 ─────────────────── */
+/* ===== Image Slider ===== */
 
 .image-slider {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  position: relative;
+  max-width: 960px;        /* 가운데 본문 폭에 맞게 */
+  margin: 40px 0 24px;
+  overflow: hidden;        /* 이게 제일 중요! 영역 밖으로 나가는 이미지 숨기기 */
 }
 
 .image-slider-track {
-  overflow: hidden;
-  width: 100%;
+  display: flex;
+  transition: transform 0.4s ease;
 }
 
-.image-slider-track img {
+.image-slider .slide {
+  flex: 0 0 100%;          /* 슬라이드 하나가 컨테이너 폭 100% */
+}
+
+.image-slider img {
   display: block;
   width: 100%;
+  height: auto;
 }
 
-/* 버튼 + 카운터 영역 */
+/* 버튼 + 카운트 UI */
+
 .image-slider-ui {
-  margin-top: 8px;
-  font-size: 12px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-size: 11px;
+  margin-top: 8px;
 }
 
 .image-slider-counter {
-  font-family: inherit;
+  letter-spacing: 0.04em;
 }
 
 .image-slider-prev,
 .image-slider-next {
-  border: 1px solid #000;
+  width: 22px;
+  height: 18px;
+  border: 1px solid #333;
   background: #fff;
-  padding: 0 6px;
-  min-width: 20px;
-  height: 20px;
   font-size: 11px;
-  line-height: 18px;
+  line-height: 1;
+  padding: 0;
   cursor: pointer;
 }
 
 .image-slider-prev:hover,
 .image-slider-next:hover {
-  background: #000;
-  color: #fff;
+  background: #f2f2f2;
 }

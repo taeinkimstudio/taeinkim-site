@@ -27,54 +27,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2) 이미지 슬라이더 초기화
-  initImageSliders();
-});
-
-function initImageSliders() {
+ // ----- Image slider -----
+document.addEventListener('DOMContentLoaded', function () {
   const sliders = document.querySelectorAll('[data-slider]');
-  if (!sliders.length) return;
 
-  sliders.forEach(setupSlider);
-}
+  sliders.forEach(function (slider) {
+    const track = slider.querySelector('.image-slider-track');
+    const slides = Array.from(track.querySelectorAll('.slide'));
+    const btnPrev = slider.querySelector('.image-slider-prev');
+    const btnNext = slider.querySelector('.image-slider-next');
+    const currentEl = slider.querySelector('.current');
+    const totalEl = slider.querySelector('.total');
 
-function setupSlider(slider) {
-  const track = slider.querySelector('.image-slider-track');
-  const imgs = Array.from(track.querySelectorAll('img'));
+    if (!slides.length) return;
 
-  if (!imgs.length) return;
+    let currentIndex = 0;
+    totalEl.textContent = slides.length;
 
-  const prevBtn = slider.querySelector('.image-slider-prev');
-  const nextBtn = slider.querySelector('.image-slider-next');
-  const currentSpan = slider.querySelector('.current');
-  const totalSpan = slider.querySelector('.total');
+    function update() {
+      const offset = -currentIndex * 100; // 퍼센트 기준 이동
+      track.style.transform = `translateX(${offset}%)`;
+      currentEl.textContent = currentIndex + 1;
+    }
 
-  let index = 0;
-  const total = imgs.length;
-  totalSpan.textContent = total;
+    btnPrev.addEventListener('click', function () {
+      if (currentIndex > 0) {
+        currentIndex--;
+        update();
+      }
+    });
 
-  // 스타일 세팅
-  track.style.display = 'flex';
-  track.style.transition = 'transform 0.4s ease';
-  imgs.forEach(img => {
-    img.style.width = '100%';
-    img.style.flexShrink = '0';
-    img.loading = 'lazy';
-  });
+    btnNext.addEventListener('click', function () {
+      if (currentIndex < slides.length - 1) {
+        currentIndex++;
+        update();
+      }
+    });
 
-  function update() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    currentSpan.textContent = index + 1;
-  }
-
-  prevBtn.addEventListener('click', () => {
-    index = (index - 1 + total) % total;
+    window.addEventListener('resize', update);
     update();
   });
-
-  nextBtn.addEventListener('click', () => {
-    index = (index + 1) % total;
-    update();
-  });
-
-  update();
-}
+});
