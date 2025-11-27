@@ -69,3 +69,45 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSlider();
   });
 });
+
+  // ----- 이미지 슬라이더 초기화 -----
+  document.querySelectorAll('[data-slider]').forEach(setupSlider);
+});
+
+// DOMContentLoaded 바깥에 아래 함수들을 추가
+function setupSlider(slider) {
+  const track = slider.querySelector('.image-slider-track');
+  const slides = Array.from(track.querySelectorAll('img'));
+  const container = slider.parentElement; // slider의 부모 (project-section)
+  const counter = container.querySelector('.image-slider-counter');
+  const btnPrev = counter.querySelector('.image-slider-prev');
+  const btnNext = counter.querySelector('.image-slider-next');
+  const currentSpan = counter.querySelector('.current');
+  const totalSpan = counter.querySelector('.total');
+
+  if (!slides.length) return;
+
+  let currentIndex = 0;
+  const total = slides.length;
+  totalSpan.textContent = total;
+
+  function updateSlide() {
+    slides.forEach((img, idx) => {
+      img.classList.toggle('is-active', idx === currentIndex);
+    });
+    currentSpan.textContent = currentIndex + 1;
+  }
+
+  updateSlide();
+
+  btnPrev.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + total) % total; // 0에서 뒤로 가면 마지막으로
+    updateSlide();
+  });
+
+  btnNext.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % total; // 마지막에서 앞으로 가면 0으로
+    updateSlide();
+  });
+}
+

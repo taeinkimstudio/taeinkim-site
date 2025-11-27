@@ -282,173 +282,95 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
-/* ===== Image Slider ===== */
+
+
+/* =========================
+   Project image slider
+   ========================= */
 
 .image-slider {
-  position: relative;
-  max-width: 960px;        /* 가운데 본문 폭에 맞게 */
-  margin: 40px 0 24px;
-  overflow: hidden;        /* 이게 제일 중요! 영역 밖으로 나가는 이미지 숨기기 */
+  margin: 48px 0 24px;
 }
 
+/* 이미지를 가로 한 칸씩 보여주는 트랙 */
 .image-slider-track {
   display: flex;
-  transition: transform 0.4s ease;
+  overflow: hidden;
 }
 
-.image-slider .slide {
-  flex: 0 0 100%;          /* 슬라이드 하나가 컨테이너 폭 100% */
-}
-
-.image-slider img {
-  display: block;
+/* 각 이미지는 가로 100% 차지 */
+.image-slider-track img {
+  flex: 0 0 100%;
   width: 100%;
   height: auto;
+  display: block;
 }
 
-/* 버튼 + 카운트 UI */
-
+/* 슬라이더 하단 UI(숫자 + 화살표 버튼) */
 .image-slider-ui {
+  position: static;           /* 이미지 위로 겹치지 않게 */
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
   margin-top: 8px;
+  font-size: 12px;
 }
 
+/* "1 / 4" 부분 */
 .image-slider-counter {
-  letter-spacing: 0.04em;
+  min-width: 52px;
 }
 
-.image-slider-prev,
-.image-slider-next {
-  width: 22px;
-  height: 18px;
-  border: 1px solid #333;
+/* 좌우 이동 버튼 공통 스타일 */
+.image-slider-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #111;
   background: #fff;
   font-size: 11px;
   line-height: 1;
-  padding: 0;
   cursor: pointer;
 }
 
-.image-slider-prev:hover,
-.image-slider-next:hover {
-  background: #f2f2f2;
+/* hover 시 살짝만 강조 (색상 유지) */
+.image-slider-button:hover {
+  background: #f5f5f5;
 }
 
-/* --------------------------- */
-/* Image slider (project hero) */
-/* --------------------------- */
-
-.image-slider {
-  position: relative;
-  max-width: 960px;
-  margin: 40px auto 24px;
-  overflow: hidden;
-}
-
-.image-slider-track {
-  display: flex;
-  transition: transform 0.4s ease;
-}
-
-.image-slide {
-  flex: 0 0 100%;
-}
-
-.image-slide img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* 슬라이더 UI – c-o-m.kr 느낌 참고한 버전 */
-.image-slider-ui {
-  position: absolute;
-  left: 0;
-  bottom: 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 8px;
-  font-size: 12px;
-  line-height: 1;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.image-slider-counter {
-  letter-spacing: 0.04em;
-}
-
-.image-slider-arrow {
-  border: none;
-  background: transparent;
-  padding: 2px 4px;
-  font-size: 11px;
-  cursor: pointer;
-}
-
-.image-slider-arrow:disabled {
-  opacity: 0.3;
+/* 비활성 상태(실제로는 거의 안 쓰지만 대비용) */
+.image-slider-button:disabled {
+  opacity: 0.4;
   cursor: default;
 }
-/* --------------------------- */
-/* Image slider (project hero) */
-/* --------------------------- */
 
-.image-slider {
-  position: relative;
-  max-width: 960px;
-  margin: 40px auto 24px;
-  overflow: hidden;
+/* -------------------------
+   모바일 대응
+   ------------------------- */
+@media (max-width: 768px) {
+  .image-slider {
+    margin: 32px 0 16px;
+  }
+
+  .image-slider-ui {
+    font-size: 11px;
+    margin-top: 6px;
+  }
+
+  .image-slider-button {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
 }
 
-.image-slider-track {
-  display: flex;
-  transition: transform 0.4s ease;
-}
 
-.image-slide {
-  flex: 0 0 100%;
-}
 
-.image-slide img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 
-/* 슬라이더 UI – c-o-m.kr 느낌 참고한 버전 */
-.image-slider-ui {
-  position: absolute;
-  left: 0;
-  bottom: 8px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 8px;
-  font-size: 12px;
-  line-height: 1;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.image-slider-counter {
-  letter-spacing: 0.04em;
-}
-
-.image-slider-arrow {
-  border: none;
-  background: transparent;
-  padding: 2px 4px;
-  font-size: 11px;
-  cursor: pointer;
-}
-
-.image-slider-arrow:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
 /* ---------------------------
    Mobile layout (<= 900px)
 ---------------------------- */
