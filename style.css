@@ -449,3 +449,33 @@ a:hover {
   opacity: 0.3;
   cursor: default;
 }
+/* ---------------------------
+   Mobile layout (<= 900px)
+---------------------------- */
+@media (max-width: 900px) {
+  .layout {
+    display: block;           /* 좌/우 → 상/하로 쌓기 */
+  }
+
+  #sidebar {
+    position: static !important;  /* 고정 해제 */
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 0 16px 40px;   /* 양옆 여백 조금 주기 */
+  }
+
+  .project-body {
+    max-width: 100%;
+  }
+
+  .image-slider {
+    max-width: 100%;
+  }
+}
