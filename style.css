@@ -228,7 +228,8 @@ a:hover {
 }
 
 /* 버튼 공통 */
-.image-slider-button {
+.image-slider-prev,
+.image-slider-next {
   border: 1px solid #111;
   background: #fff;
   min-width: 22px;
@@ -242,6 +243,7 @@ a:hover {
   line-height: 1;
   cursor: pointer;
 }
+
 
 .image-slider-button:hover {
   background: #111;
