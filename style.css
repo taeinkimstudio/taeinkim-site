@@ -320,6 +320,29 @@ a:hover {
   }
 }
 
+/* === sidebar 전용 로고 크기 제한 === */
+#sidebar .logo {
+  display: block;
+  position: static;      /* 혹시 예전에 fixed/absolute가 걸려 있으면 덮어쓰기 */
+  margin-bottom: 40px;   /* 아래 여백은 취향대로 */
+  max-width: 180px;      /* 로고 가로 최대값 */
+}
+
+#sidebar .logo img {
+  display: block;
+  width: 100%;           /* 위 max-width 안에서만 100% */
+  height: auto;
+}
+
+/* 모바일에서 살짝 더 작게 */
+@media (max-width: 768px) {
+  #sidebar .logo {
+    max-width: 150px;
+    margin-bottom: 24px;
+  }
+}
+
+
 /* 아주 작은 화면 (아이폰 SE 정도) */
 @media (max-width: 480px) {
   .layout {
