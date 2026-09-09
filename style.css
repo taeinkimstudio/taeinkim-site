@@ -310,7 +310,7 @@ a:hover {
   display: block;
   position: static;      /* 혹시 예전에 fixed/absolute가 걸려 있으면 덮어쓰기 */
   margin-bottom: 40px;   /* 아래 여백은 취향대로 */
-  max-width: 180px;      /* 로고 가로 최대값 */
+  max-width: 200px;      /* 로고 가로 최대값 */
 }
 
 #sidebar .logo img {
