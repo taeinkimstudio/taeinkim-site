@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://taeinkim.kr/</loc>
+    </url>
+
+    <url>
+        <loc>https://taeinkim.kr/info</loc>
+    </url>
+    
+    <url>
+        <loc>https://taeinkim.kr/project-a</loc>
+    </url>
+
+    <url>
+        <loc>https://taeinkim.kr/project-b</loc>
+    </url>
+
+    <url>
+        <loc>https://taeinkim.kr/project-c</loc>
+    </url>
+
+    <url>
+        <loc>https://taeinkim.kr/project-d</loc>
+    </url>
+
+    <url>
+        <loc>https://taeinkim.kr/project-e</loc>
+    </url>
+
+    <url>
+        <loc>https://taeinkim.kr/project-f</loc>
+    </url>
+
+</urlset>
